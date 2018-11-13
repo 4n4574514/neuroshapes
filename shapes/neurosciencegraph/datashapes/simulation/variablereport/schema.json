@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/dash/variablereport/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://neuroshapes.org/commons/entity"
+  ],
+  "shapes": [
+    {
+      "@id": "this:VariableReportShape",
+      "@type": "sh:NodeShape",
+      "label": "Validation report shape",
+      "targetClass": "nsg:VariableReportShape",
+      "nodekind": "sh:BlankNodeOrIRI",
+      "and": [
+        {
+          "node": "https://neuroshapes.org/commons/entity/shapes/EntityShape"
+        },
+        {
+          "property": [
+            {
+              "path": "nsg:variable",
+              "name": "Variable",
+              "description": "Variable shape (e.g: voltage, curent).",
+              "datatype": "xsd:string",
+              "minCount": 1
+            },
+            {
+              "path": "nsg:target",
+              "name": "Target",
+              "description": "The variable report target.",
+              "datatype": "xsd:string",
+              "in": [
+                "compartment",
+                "soma",
+                "summation",
+                "extra cellular recording"
+              ],
+              "minCount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "@id": "https://neuroshapes.org/dash/variablereport"
+}

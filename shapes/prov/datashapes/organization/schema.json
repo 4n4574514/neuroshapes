@@ -1,0 +1,19 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "@base": "https://provshapes.org/dash/organization/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "shapes": [
+    {
+      "@id": "Organization",
+      "@type": "sh:NodeShape",
+      "label": "Organization shape",
+      "comment": "An organization is a social or legal institution such as a company, society, etc.",
+      "targetClass": "prov:Organization",
+      "nodeKind": "sh:BlankNodeOrIRI"
+    }
+  ]
+}

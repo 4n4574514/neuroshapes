@@ -1,0 +1,345 @@
+{
+  "@context": [
+    {
+      "@vocab": "http://sdsd.org",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "prov": "http://www.w3.org/ns/prov#",
+      "sh": "http://www.w3.org/ns/shacl#",
+      "shsh": "http://www.w3.org/ns/shacl-shacl#",
+      "dcterms": "http://purl.org/dc/terms/",
+      "schema": "http://schema.org/",
+      "shext": "http://www.w3.org/ns/shacl/ext#",
+      "class": {
+        "@id": "sh:class",
+        "@type": "@id"
+      },
+      "rootClass": {
+        "@id": "shext:rootClass",
+        "@type": "@id"
+      },
+      "path": {
+        "@id": "sh:path",
+        "@type": "@id"
+      },
+      "qualifiedValueShape": {
+        "@id": "sh:qualifiedValueShape",
+        "@type": "@id"
+      },
+      "qualifiedValueShapesDisjoint": {
+        "@id": "sh:qualifiedValueShapesDisjoint",
+        "@type": "xsd:boolean"
+      },
+      "qualifiedMinCount": {
+        "@id": "sh:qualifiedMinCount",
+        "@type": "xsd:integer"
+      },
+      "qualifiedMaxCount": {
+        "@id": "sh:qualifiedMaxCount",
+        "@type": "xsd:integer"
+      },
+      "maxCount": {
+        "@id": "sh:maxCount",
+        "@type": "xsd:integer"
+      },
+      "minCount": {
+        "@id": "sh:minCount",
+        "@type": "xsd:integer"
+      },
+      "minInclusive": {
+        "@id": "sh:minInclusive",
+        "@type": "xsd:num"
+      },
+      "maxInclusive": {
+        "@id": "sh:maxInclusive"
+      },
+      "maxExclusive": {
+        "@id": "sh:maxExclusive"
+      },
+      "minExclusive": {
+        "@id": "sh:minExclusive"
+      },
+      "in": {
+        "@id": "sh:in",
+        "@container": "@list"
+      },
+      "imports": {
+        "@id": "owl:imports",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "datatype": {
+        "@id": "sh:datatype",
+        "@type": "@id"
+      },
+      "description": {
+        "@id": "sh:description"
+      },
+      "name": {
+        "@id": "sh:name"
+      },
+      "severity": {
+        "@id": "sh:severity"
+      },
+      "nodeKind": {
+        "@id": "sh:nodeKind",
+        "@type": "@id"
+      },
+      "BlankNode": {
+        "@id": "sh:BlankNode"
+      },
+      "BlankNodeOrIRI": {
+        "@id": "sh:BlankNodeOrIRI"
+      },
+      "BlankNodeOrLiteral": {
+        "@id": "sh:BlankNodeOrLiteral"
+      },
+      "IRI": {
+        "@id": "sh:IRI"
+      },
+      "IRIOrLiteral": {
+        "@id": "sh:IRIOrLiteral"
+      },
+      "Literal": {
+        "@id": "sh:Literal"
+      },
+      "prefix": {
+        "@id": "sh:prefix",
+        "@type": "xsd:string"
+      },
+      "declare": {
+        "@id": "sh:declare"
+      },
+      "namespace": {
+        "@id": "sh:namespace",
+        "@type": "xsd:anyURI"
+      },
+      "Violation": {
+        "@id": "sh:Violation"
+      },
+      "suggestedShapesGraph": {
+        "@id": "sh:suggestedShapesGraph",
+        "@type": "@id"
+      },
+      "shapesGraph": {
+        "@id": "sh:shapesGraph",
+        "@type": "@id"
+      },
+      "node": {
+        "@id": "sh:node",
+        "@type": "@id"
+      },
+      "property": {
+        "@id": "sh:property",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "targetClass": {
+        "@id": "sh:targetClass",
+        "@type": "@id"
+      },
+      "targetObjectsOf": {
+        "@id": "sh:targetObjectsOf",
+        "@type": "@id"
+      },
+      "targetSubjectsOf": {
+        "@id": "sh:targetSubjectsOf",
+        "@type": "@id"
+      },
+      "targetNode": {
+        "@id": "sh:targetNode",
+        "@type": "@id"
+      },
+      "target": {
+        "@id": "sh:target",
+        "@type": "@id"
+      },
+      "isDefinedBy": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+        "@type": "@id"
+      },
+      "shapes": {
+        "@reverse": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+        "@type": "@id",
+        "@container": "@set"
+      },
+      "Shape": {
+        "@id": "sh:Shape"
+      },
+      "NodeShape": {
+        "@id": "sh:NodeShape"
+      },
+      "PropertyShape": {
+        "@id": "sh:PropertyShape"
+      },
+      "or": {
+        "@id": "sh:or",
+        "@type": "@id",
+        "@container": "@list"
+      },
+      "and": {
+        "@id": "sh:and",
+        "@type": "@id",
+        "@container": "@list"
+      },
+      "xone": {
+        "@id": "sh:xone",
+        "@type": "@id",
+        "@container": "@list"
+      },
+      "not": {
+        "@id": "sh:not",
+        "@type": "@id",
+        "@container": "@list"
+      },
+      "lessThan": {
+        "@id": "sh:lessThan",
+        "@type": "@id"
+      },
+      "hasValue": {
+        "@id": "sh:hasValue"
+      },
+      "resultMessage": {
+        "@id": "sh:message"
+      },
+      "deactivated": {
+        "@id": "sh:deactivated"
+      },
+      "pattern": {
+        "@id": "sh:pattern"
+      },
+      "label": {
+        "@id": "rdfs:label",
+        "@type": "xsd:string"
+      },
+      "comment": {
+        "@id": "rdfs:comment",
+        "@type": "xsd:string"
+      },
+      "editorialNote": {
+        "@id": "skos:editorialNote",
+        "@type": "xsd:string"
+      },
+      "seeAlso": {
+        "@id": "rdfs:seeAlso",
+        "@type": "@id"
+      },
+      "this": "https://bbp-nexus.epfl.ch/staging/v0/commons/schema_name/shapes/",
+      "sio": "http://semanticscience.org/ontology/sio.owl#",
+      "nidm": "http://purl.org/nidash/nidm#",
+      "dicom": "http://neurolex.org/wiki/Category:DICOM_term/"
+    }
+  ],
+  "@type": "owl:Ontology",
+  "shapes": [
+    {
+      "@id": "http://gggg.org",
+      "@type": "sh:NodeShape",
+      "targetClass": "sio:file",
+      "nodeKind": "sh:BlankNodeOrIRI",
+      "property": [
+        {
+          "@id": "http://gggg.org/EchoTime",
+          "path": "dicom:EchoTime",
+          "name": "EchoTime",
+          "description": "Echo time for the scan; the time from the middle of the first pulse to the middle of the echo. Measured in seconds.",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "minInclusive": 0.001,
+          "maxInclusive": 0.01
+        },
+        {
+          "@id": "http://gggg.org/EchoTrainLength",
+          "path": "dicom:EchoTrainLength",
+          "name": "EchoTrainLength",
+          "description": "Echo train length for the scan; the number of echoes.",
+          "datatype": "http://www.w3.org/2001/XMLSchema#int",
+          "minInclusive": 1,
+          "maxInclusive": 32
+        },
+        {
+          "@id": "http://gggg.org/FlipAngle",
+          "path": "dicom:FlipAngle",
+          "name": "FlipAngle",
+          "description": "Flip angle for the scan; the amount of rotation the net magnetization undergoes during a pulse. Measured in degrees.",
+          "datatype": "http://www.w3.org/2001/XMLSchema#int",
+          "minInclusive": 0,
+          "maxInclusive": 180
+        },
+        {
+          "@id": "http://gggg.org/InversionTime",
+          "path": "dicom:InversionTime",
+          "name": "InversionTime",
+          "description": "Inversion time for the scan; the time between the 180deg inverting pulse and the 90deg pulse.",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "minInclusive": {
+            "@type": "http://www.w3.org/2001/XMLSchema#float",
+            "@value": "0.01"
+          },
+          "maxInclusive": {
+            "@type": "http://www.w3.org/2001/XMLSchema#float",
+            "@value": "3.0"
+          }
+        },
+        {
+          "@id": "http://gggg.org/MagneticFieldStrength",
+          "path": "dicom:MagneticFieldStrength",
+          "name": "MagneticFieldStrength",
+          "description": "Magnetic field strength for the scan. Measured in Tesla.",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:minInclusive": {
+            "@type": "http://www.w3.org/2001/XMLSchema#double",
+            "@value": "1.5"
+          },
+          "sh:maxInclusive": {
+            "@type": "http://www.w3.org/2001/XMLSchema#double",
+            "@value": "3.0"
+          }
+        },
+        {
+          "@id": "http://gggg.org/RepetitionTime",
+          "path": "dicom:RepetitionTime",
+          "name": "RepetitionTime",
+          "description": "Repetition time for the scan; the time between successive pulse sequences. Measured in seconds.",
+          "datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "minInclusive": 0.001,
+          "maxInclusive": 10.0
+        },
+        {
+          "path": "nidm:Task",
+          "name": "Task",
+          "descripion": "The task performed in functional scans.",
+          "in": [
+            "rest",
+            "gonogo",
+            "nback"
+          ]
+        },
+        {
+          "path": "nidm:hasImageContrastType",
+          "name": "ImageContrastType",
+          "description": "The image contrast types for the scans.",
+          "in": [
+            "nidm:T1Weighted",
+            "nidm:T2Weighted",
+            "nidm:DiffusionWeighted",
+            "nidm:FlowWeighted"
+          ]
+        },
+        {
+          "path": "nidm:hasImageUsageType",
+          "name": "ImageUsageType",
+          "description": "The image usage types for the scans.",
+          "in": [
+            "nidm:Anatomical",
+            "nidm:DiffusionWeighted",
+            "nidm:Functional"
+          ]
+        }
+      ]
+    }
+  ],
+  "@id": "https://bbp-nexus.epfl.ch/staging/v0/commons/schema_name"
+}

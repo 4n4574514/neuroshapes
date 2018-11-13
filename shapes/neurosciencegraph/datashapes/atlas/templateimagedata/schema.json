@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/commons/templateimagedata/shapes/"
+    }
+  ],
+  "import": [
+    "https://neuroshapes.org/schemas/neurosciencegraph/commons/entity/v0.1.0",
+    "https://neuroshapes.org/schemas/neurosciencegraph/atlas/imagestack/v0.1.0",
+    "https://neuroshapes.org/schemas/neurosciencegraph/atlas/imagevolume/v0.1.0"
+  ],
+  "@type": "nxv:Schema",
+  "shapes": [
+    {
+      "@id": "this:TemplateImageDataShape",
+      "@type": "sh:NodeShape",
+      "description": "Template image data",
+      "nodeKind": "sh:BlankNodeOrIRI",
+      "targetClass": "nsg:TemplateImageData",
+      "xone": [
+        {
+          "class": "nsg:ImageStack",
+          "node": "https://neuroshapes.org/commons/imagestack/shapes/ImageStackShape"
+        },
+        {
+          "class": "nsg:ImageVolume",
+          "node": "https://neuroshapes.org/commons/imagevolume/shapes/ImageVolumeShape"
+        }
+      ]
+    }
+  ],
+  "@id": "https://neuroshapes.org/commons/templateimagedata"
+}

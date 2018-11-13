@@ -6,6 +6,41 @@ lazy val prov           = "ch.epfl.bluebrain.nexus" %% "nexus-prov"      % provV
 lazy val commonsSchemas = "ch.epfl.bluebrain.nexus" %% "commons-schemas" % commonsVersion
 lazy val kgSchemas      = "ch.epfl.bluebrain.nexus" %% "kg-schemas"      % kgVersion
 
+lazy val docs = project
+  .in(file("docs"))
+  .enablePlugins(ParadoxSitePlugin,ParadoxMaterialThemePlugin,GhpagesPlugin)
+  .settings(
+    name                       := "nsg-docs",
+    moduleName                 := "nsg-docs",
+    ParadoxMaterialThemePlugin.paradoxMaterialThemeSettings(Paradox),
+    paradoxMaterialTheme in Compile := {
+      ParadoxMaterialTheme()
+        .withColor("light-blue", "cyan")
+        .withLogoIcon("cloud")
+        .withCopyright("""Neuroshapes is Open Source and available under the CC-BY-4.0 License.<br/>|""".stripMargin)
+        .withRepository(uri("https://github.com/INCF/neuroshapes"))
+        .withCustomStylesheet("assets/css/docs.css")
+        .withCustomJavaScript("assets/js/index.js")
+        .withSocial(
+          uri("https://github.com/INCF/neuroshapes"),
+          uri("https://gitter.im/INCF/neuroshapes"),
+          uri("https://twitter.com/search?q=%23Neuroshapes")
+        )
+
+    },
+    paradoxNavigationDepth in Compile := 3,
+    paradoxProperties in Compile ++= Map(
+      "project.name"    -> "Paradox Material Theme",
+      "github.base_url" -> "https://github.com/INCF/neuroshapes"
+    ),
+    git.remoteRepo  := s"git@github.com:INCF/neuroshapes.git",
+    ghpagesNoJekyll := true,
+    ghpagesBranch   := "gh-pages"
+  )
+
+
+
+
 lazy val core = project
   .in(file("modules/core"))
   .enablePlugins(WorkbenchPlugin)
@@ -101,11 +136,24 @@ lazy val simulation = project
   )
 
 
+lazy val minds = project
+  .in(file("modules/dataset"))
+  .enablePlugins(WorkbenchPlugin)
+  .disablePlugins(ScapegoatSbtPlugin, DocumentationPlugin)
+  .dependsOn(nexusschema)
+  .settings(common)
+  .settings(
+    name := "nsg-dataset-schemas",
+    moduleName := "nsg-dataset-schemas"
+  )
+
+
+
 lazy val root = project
   .in(file("."))
   .settings(name := "nsg-schemas", moduleName := "nsg-schemas")
   .settings(common, noPublish)
-  .aggregate(core, experiment, atlas, morphology, electrophysiology, simulation, nexusschema,nsgcommons)
+  .aggregate(core, experiment, atlas, morphology, electrophysiology, simulation, nexusschema, nsgcommons, docs,core,minds)
 
 lazy val common = Seq(
   scalacOptions in (Compile, console) ~= (_ filterNot (_ == "-Xfatal-warnings")),

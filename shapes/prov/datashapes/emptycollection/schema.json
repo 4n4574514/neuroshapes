@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "@base": "https://provshapes.org/dash/emptycollection/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://provshapes.org/commons/emptycollection"
+  ],
+  "shapes": [
+    {
+      "@id": "EmptyCollectionShape",
+      "@type": "sh:NodeShape",
+      "label": "Empty collection shape",
+      "comment": "An empty collection is a collection without members.",
+      "targetClass": "prov:EmptyCollection",
+      "nodeKind": "sh:BlankNodeOrIRI",
+      "node": "https://provshapes.org/commons/emptycollection/shapes/EmptyCollectionShape"
+    }
+  ]
+}

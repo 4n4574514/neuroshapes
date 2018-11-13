@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/dash/ionchannelmechanismrelease/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://neuroshapes.org/dash/distribution",
+    "https://neuroshapes.org/dash/modelrelease",
+    "https://neuroshapes.org/dash/subcellularmodel"
+  ],
+  "shapes": [
+    {
+      "@id": "this:IonChannelMechanismReleaseShape",
+      "@type": "sh:NodeShape",
+      "label": "This shape is for...",
+      "targetClass": "nsg:IonChannelMechanismRelease",
+      "nodekind": "sh:BlankNodeOrIRI",
+      "and": [
+        {
+          "node": "https://neuroshapes.org/dash/modelrelease/shapes/ModelReleaseShape"
+        },
+        {
+          "property": [
+            {
+              "path": "nsg:distribution",
+              "name": "Ion channel release data location",
+              "description": "Ion channel release data location.",
+              "node": "https://neuroshapes.org/dash/distribution/shapes/DistributionShape"
+            },
+            {
+              "path": "nsg:subCellularModel",
+              "name": "Subcellular model",
+              "description": "Subcellular models which are part of this release.",
+              "node": "https://neuroshapes.org/dash/subcellularmodel/shapes/SubCellularModelShape"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "@id": "https://neuroshapes.org/dash/ionchannelmechanismrelease"
+}

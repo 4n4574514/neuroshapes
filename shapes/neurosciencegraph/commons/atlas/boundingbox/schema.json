@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/commons/boundingbox/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://neuroshapes.org/commons/vector3d",
+    "https://neuroshapes.org/commons/quantitativevalue"
+  ],
+  "shape": [
+    {
+      "@id": "this:RotationalMatrixShape",
+      "@type": "sh:NodeShape",
+      "targetClass": "nsg:BoundingBox",
+      "nodeKind": "sh:BlankNodeOrIRI",
+      "and": [
+        {
+          "node": "https://neuroshapes.org/schemas/neurosciencegraph/commons/quantitativevalue/v0.1.0/shapes/QuantitativeValueShape"
+        },
+        {
+          "not": [
+            {
+              "path": "schema:value"
+            }
+          ]
+        },
+        {
+          "property": [
+            {
+              "path": "nsg:upperPoint",
+              "name": "First Row",
+              "description": "The first row in the matrix",
+              "node": "https://neuroshapes.org/schemas/neurosciencegraph/commons/vector3d/v0.1.0/shapes/Vector3DShape",
+              "minCount": 1,
+              "maxCount": 1
+            },
+            {
+              "path": "nsg:lowerPoint",
+              "name": "Second Row",
+              "description": "The second row in the matrix",
+              "node": "https://neuroshapes.org/schemas/neurosciencegraph/commons/vector3d/v0.1.0/shapes/Vector3DShape",
+              "minCount": 1,
+              "maxCount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "@id": "https://neuroshapes.org/commons/boundingbox"
+}

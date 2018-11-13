@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/dash/emodelscript/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://neuroshapes.org/commons/entity",
+    "https://neuroshapes.org/dash/distribution"
+  ],
+  "shapes": [
+    {
+      "@id": "this:EModelScriptShape",
+      "@type": "sh:NodeShape",
+      "label": "This shape is for...",
+      "nodekind": "sh:BlankNodeOrIRI",
+      "targetClass": "nsg:EModelScript",
+      "and": [
+        {
+          "node": "https://neuroshapes.org/commons/entity/shapes/EntityShape"
+        },
+        {
+          "property": [
+            {
+              "path": "schema:distribution",
+              "name": "Distribution",
+              "description": "Distribution.",
+              "node": "this:EModelScriptDistributionShape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "this:EModelScriptDistributionShape",
+      "@type": "sh:NodeShape",
+      "label": "This shape is for...",
+      "nodekind": "sh:BlankNodeOrIRI",
+      "and": [
+        {
+          "node": "https://neuroshapes.org/dash/distribution/shapes/DistributionShape"
+        },
+        {
+          "property": [
+            {
+              "path": "schema:mediaType",
+              "name": "Media type",
+              "description": "Emodel script media types",
+              "in": [
+                "application/neuron-hoc",
+                "application/neuroml"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "@id": "https://neuroshapes.org/dash/emodelscript"
+}

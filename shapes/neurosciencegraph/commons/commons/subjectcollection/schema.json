@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/commons/subjectcollection/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://neuroshapes.org/commons/collection",
+    "https://neuroshapes.org/commons/typedlabeledontologyterm"
+  ],
+  "shapes": [
+    {
+      "@id": "this:SubjectCollectionShape",
+      "@type": "sh:NodeShape",
+      "label": "Subject Collection",
+      "comment": "All subjects in the collection should be of the same species.",
+      "and": [
+        {
+          "node": "https://neuroshapes.org/commons/collection/shapes/CollectionShape"
+        },
+        {
+          "property": [
+            {
+              "path": "nsg:species",
+              "name": "Species",
+              "description": "The species of this collection members",
+              "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/SpeciesOntologyTermShape",
+              "maxCount": 1,
+              "minCount": 1
+            },
+            {
+              "path": "prov:hadMember",
+              "name": "Member",
+              "description": "The subject (s) that are member of the collection.",
+              "class": "nsg:Subject",
+              "seeAlso": "https://neuroshapes.org/dash/subject/shapes/SubjectShape"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "@id": "https://neuroshapes.org/commons/subjectcollection"
+}

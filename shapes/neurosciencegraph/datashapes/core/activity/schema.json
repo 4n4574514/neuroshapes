@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "@base": "https://neuroshapes.org/dash/activity/shapes/"
+    }
+  ],
+  "imports": [
+    "https://neuroshapes.org/commons/activity"
+  ],
+  "@type": "nxv:Schema",
+  "shapes": [
+    {
+      "@id": "ActivityShape",
+      "@type": "sh:NodeShape",
+      "label": "Activity description.",
+      "nodeKind": "sh:BlankNodeOrIRI",
+      "targetClass": "nsg:Activity",
+      "node": "https://neuroshapes.org/commons/activity/shapes/ActivityShape"
+    }
+  ]
+}

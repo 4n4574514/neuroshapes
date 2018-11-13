@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/dash/emptycollection/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://neuroshapes.org/commons/emptycollection"
+  ],
+  "shapes": [
+    {
+      "@id": "this:EmptyCollectionShape",
+      "@type": "sh:NodeShape",
+      "label": "An empty collection shape.",
+      "comment": "A size should be provided.",
+      "targetClass": "nsg:EmptyCollection",
+      "nodeKind": "sh:BlankNodeOrIRI",
+      "node": "https://neuroshapes.org/commons/emptycollection/shapes/EmptyCollectionShape"
+    }
+  ],
+  "@id": "https://neuroshapes.org/dash/emptycollection"
+}

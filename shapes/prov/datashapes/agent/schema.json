@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "@base": "https://provshapes.org/dash/agent/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://provshapes.org/commons/agent"
+  ],
+  "shapes": [
+    {
+      "@id": "Agent",
+      "@type": "sh:NodeShape",
+      "label": "Agent shape",
+      "comment": "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.",
+      "targetClass": "prov:Agent",
+      "nodeKind": "sh:BlankNodeOrIRI",
+      "node": "https://provshapes.org/commons/agent/shapes/AgentShape"
+    }
+  ]
+}

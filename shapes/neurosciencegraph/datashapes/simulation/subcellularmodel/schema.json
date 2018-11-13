@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/dash/subcellularmodel/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://neuroshapes.org/commons/modelinstance"
+  ],
+  "shapes": [
+    {
+      "@id": "this:SubCellularModelShape",
+      "@type": "sh:NodeShape",
+      "label": "This shape is for...",
+      "targetClass": "nsg:SubCellularModel",
+      "nodekind": "sh:BlankNodeOrIRI",
+      "and": [
+        {
+          "node": "https://neuroshapes.org/commons/modelinstance/shapes/ModelInstanceShape"
+        },
+        {
+          "property": [
+            {
+              "path": "nsg:modelScript",
+              "name": "Model script",
+              "description": "Model script as mod file.",
+              "seeAlso": "https://neuroshapes.org/dash/subcellularmodelscript/shapes/SubCellularModelScriptShape",
+              "class": "nsg:SubCellularModelScript"
+            },
+            {
+              "path": "dcterms:isPartOf",
+              "name": "Part of",
+              "description": "The synapse/ion channel release this model is part of.",
+              "or": [
+                {
+                  "class": "nsg:IonChannelMechanismRelease"
+                },
+                {
+                  "class": "nsg:SynapseRelease"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "@id": "https://neuroshapes.org/dash/subcellularmodel"
+}

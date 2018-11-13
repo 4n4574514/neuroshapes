@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/dash/intrasharprecordedcellcollection/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://neuroshapes.org/dash/collection"
+  ],
+  "shapes": [
+    {
+      "@id": "this:IntraCellularSharpElectrodeRecordedCellCollectionShape",
+      "@type": "sh:NodeShape",
+      "label": "Intracellular sharp electrode-recorded cell collection shape",
+      "targetClass": "nsg:Collection",
+      "and": [
+        {
+          "node": "https://neuroshapes.org/dash/collection/shapes/CollectionShape"
+        },
+        {
+          "property": [
+            {
+              "path": "prov:hadMember",
+              "name": "Member",
+              "description": "The recorded cell member(s) of the collection",
+              "class": "nsg:IntraCellularSharpElectrodeRecordedCell",
+              "seeAlso": "https://neuroshapes.org/dash/intrasharprecordedcell/shapes/IntraCellularSharpElectrodeRecordedCellShape"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "@id": "https://neuroshapes.org/dash/intrasharprecordedcellcollection"
+}

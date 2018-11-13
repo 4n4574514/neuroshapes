@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/commons/organization/shapes/"
+    }
+  ],
+  "imports": [
+    "https://neuroshapes.org/commons/organization",
+    "https://neuroshapes.org/commons/identifier"
+  ],
+  "@type": "nxv:Schema",
+  "shapes": [
+    {
+      "@id": "this:OrganizationShape",
+      "@type": "sh:NodeShape",
+      "label": "A shape for describing an organization based on http://schema.org/Organization.",
+      "comment": "A nsg:Organization can have a GRID identifier.",
+      "seeAlso": [
+        "http://schema.org/Organization",
+        "https://www.grid.ac"
+      ],
+      "nodeKind": "sh:BlankNodeOrIRI",
+      "and": [
+        {
+          "node": "https://neuroshapes.org/commons/organization/shapes/OrganizationShape"
+        },
+        {
+          "property": [
+            {
+              "path": "schema:parentOrganization",
+              "name": "Parent Organization",
+              "node": "this:OrganizationShape"
+            },
+            {
+              "@id": "https://neuroshapes.org/schemas/neurosciencegraph/commons/identifier/v0.1.0/shapes/WithGridIdentifierPropertyShape"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "@id": "https://neuroshapes.org/commons/organization"
+}

@@ -1,0 +1,114 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/dash/bluepyefeconfiguration/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://neuroshapes.org/commons/entity",
+    "https://neuroshapes.org/commons/typedlabeledontologyterm"
+  ],
+  "shapes": [
+    {
+      "@id": "this:BluePyEfeConfigurationShape",
+      "@type": "sh:NodeShape",
+      "label": "BluePyEfe configuration shape",
+      "comment": "BluePyEfe features extraction configuration shape.",
+      "targetClass": "nsg:Configuration",
+      "nodekind": "sh:BlankNodeOrIRI",
+      "and": [
+        {
+          "node": "https://neuroshapes.org/commons/entity/shapes/EntityShape"
+        },
+        {
+          "property": [
+            {
+              "path": "nsg:species",
+              "name": "Species",
+              "description": "Species",
+              "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/SpeciesOntologyTermShape",
+              "minCount": 1,
+              "maxCount": 1
+            },
+            {
+              "path": "nsg:brainRegion",
+              "name": "Brain region",
+              "description": "Brain region",
+              "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/BrainRegionOntologyTermShape",
+              "minCount": 1,
+              "maxCount": 1
+            },
+            {
+              "path": "nsg:mType",
+              "description": "Morphological cell type",
+              "minCount": 1,
+              "maxCount": 1,
+              "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/MorphologicalCellTypeOntologyTermShape"
+            },
+            {
+              "path": "nsg:experimentalCell",
+              "description": "Optional list of experimental cells for this cell type",
+              "node": "this:ExperimentalCellShape"
+            },
+            {
+              "path": "nsg:experimentalTraceLocation",
+              "description": "Access url in the linked entity distribution to locate experimental traces",
+              "class": "nsg:Entity",
+              "minCount": 1,
+              "maxCount": 1
+            },
+            {
+              "path": "nsg:featureExtractionConfiguration",
+              "description": "Configuration dictionary for features extraction",
+              "nodeKind": "sh:BlankNode",
+              "minCount": 1,
+              "maxCount": 1
+            },
+            {
+              "path": "nsg:stimuliToExperimentMap",
+              "description": "Stimuli to experiment mapping",
+              "nodeKind": "sh:BlankNode",
+              "maxCount": 1
+            },
+            {
+              "path": "nsg:masterListConfiguration",
+              "description": "Master list configuration file providing details about the experiments",
+              "class": "nsg:Entity",
+              "maxCount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@id": "this:ExperimentalCellShape",
+      "@type": "sh:NodeShape",
+      "label": "Shape specifies cell list ",
+      "nodekind": "sh:BlankNodeOrIRI",
+      "property": [
+        {
+          "path": "schema:name",
+          "description": "Name of the cell",
+          "minCount": 1,
+          "maxCount": 1
+        },
+        {
+          "path": "schema:description",
+          "description": "Comments about the cell",
+          "maxCount": 1
+        },
+        {
+          "path": "nsg:channel",
+          "name": "Channel",
+          "description": "Channel number",
+          "datatype": "xsd:integer",
+          "minCount": 1,
+          "maxCount": 1
+        }
+      ]
+    }
+  ],
+  "@id": "https://neuroshapes.org/dash/bluepyefeconfiguration"
+}

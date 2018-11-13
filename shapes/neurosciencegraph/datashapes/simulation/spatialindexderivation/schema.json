@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/dash/spatialindexderivation/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://provshapes.org/commons/derivation"
+  ],
+  "shapes": [
+    {
+      "@id": "this:SpatialIndexDerivationShape",
+      "@type": "sh:NodeShape",
+      "label": "Spatial index derivation shape definition",
+      "targetClass": "nsg:SpatialIndexDerivation",
+      "nodeKind": "sh:BlankNodeOrIRI",
+      "and": [
+        {
+          "node": "https://provshapes.org/commons/derivation/shapes/DerivationShape"
+        },
+        {
+          "property": [
+            {
+              "path": "prov:entity",
+              "name": "Entity",
+              "description": "The detailed circuit entity from which the spatial index derived from.",
+              "class": "nsg:DetailedCircuit"
+            },
+            {
+              "path": "nsg:spatialIndex",
+              "name": "Spatial index",
+              "description": "The spatial index derived from the circuit.",
+              "class": "nsg:SpatialIndex"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "@id": "https://neuroshapes.org/dash/spatialindexderivation"
+}

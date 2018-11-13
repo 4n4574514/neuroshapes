@@ -1,0 +1,23 @@
+{
+  "@context" : [
+    "https://neuroshapes.org/contexts/nexus/core/schema/v0.2.0",
+    {
+      "@base" : "https://neuroshapes.org/schemas/nexus/prov/entity/v1.0.0/shapes/"
+    }
+  ],
+  "@type" : "nxv:Schema",
+  "imports" : [
+    "https://neuroshapes.org/schemas/nexus/provsh/entity/v1.0.0"
+  ],
+  "shapes" : [
+    {
+      "@id" : "EntityShape",
+      "@type" : "sh:NodeShape",
+      "label" : "Entity shape",
+      "comment" : "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary.",
+      "targetClass" : "prov:Entity",
+      "nodeKind" : "sh:BlankNodeOrIRI",
+      "node" : "https://neuroshapes.org/schemas/nexus/provsh/entity/v1.0.0/shapes/EntityShape"
+    }
+  ]
+}

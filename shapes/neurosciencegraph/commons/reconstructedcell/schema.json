@@ -1,0 +1,51 @@
+{
+  "@context" : [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this" : "https://neuroshapes.org/commons/reconstructedcell/shapes/"
+    }
+  ],
+  "@id" : "https://neuroshapes.org/commons/reconstructedcell",
+  "@type" : "nxv:Schema",
+  "imports" : [
+    "https://neuroshapes.org/commons/minds"
+  ],
+  "shapes" : [
+    {
+      "@id" : "this:ReconstructedCellShape",
+      "@type" : "sh:NodeShape",
+      "label" : "Reconstructed cell shape definition",
+      "targetClass" : "nsg:ReconstructedCell",
+      "nodeKind" : "sh:BlankNodeOrIRI",
+      "and" : [
+        {
+          "node" : "https://neuroshapes.org/commons/minds/shapes/DatasetShape"
+        },
+        {
+          "property" : [
+            {
+              "path" : "nsg:axonProjection",
+              "name" : "Axon projection",
+              "description" : "Axon projection of the reconstructed cell.",
+              "node" : "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/BrainRegionOntologyTermShape"
+            },
+            {
+              "path" : "nsg:mType",
+              "name" : "Morphology type",
+              "description" : "The morphology type of the reconstructed cell.",
+              "editorialNote" : "Need the cell type for class restriction.",
+              "node" : "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/CellTypeOntologyTermShape",
+              "maxCount" : 1
+            },
+            {
+              "path" : "nsg:somaReconstructionType",
+              "name" : "Soma reconstruction type",
+              "description" : "Gives information on the type of soma of the reconstructed cell, values can be 3D or 2D contour, 1 point, 3 point.",
+              "node" : "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/SomaTypeTermShape"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

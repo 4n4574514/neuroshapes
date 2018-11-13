@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/commons/unit/shapes/"
+    }
+  ],
+  "imports": [
+    "https://neuroshapes.org/commons/labeledontologyentity"
+  ],
+  "@type": "nxv:Schema",
+  "shapes": [
+    {
+      "@id": "this:UnitShape",
+      "@type": "sh:NodeShape",
+      "property": [
+        {
+          "path": "schema:unitCode",
+          "name": "Unit",
+          "or": [
+            {
+              "node": "https://neuroshapes.org/commons/labeledontologyentity/shapes/LabeledOntologyEntityShape"
+            },
+            {
+              "datatype": "xsd:string"
+            }
+          ],
+          "minCount": 1
+        }
+      ]
+    },
+    {
+      "@id": "this:WithUnitCodeShape",
+      "@type": "sh:NodeShape",
+      "path": "schema:unitCode",
+      "name": "Unit code",
+      "node": "this:UnitShape",
+      "minCount": 1
+    }
+  ],
+  "@id": "https://neuroshapes.org/commons/unit"
+}

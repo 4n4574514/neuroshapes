@@ -1,0 +1,97 @@
+{
+  "@context" : [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this" : "https://neuroshapes.org/commons/minds/shapes"
+    }
+  ],
+  "@id" : "https://neuroshapes.org/commons/minds",
+  "@type" : "nxv:Schema",
+  "imports" : [
+    "https://neuroshapes.org/commons/subject",
+    "https://neuroshapes.org/commons/brainlocation",
+    "https://neuroshapes.org/commons/contribution",
+    "https://neuroshapes.org/commons/distribution",
+    "https://provshapes.org/schemas/generation",
+    "https://neuroshapes.org/commons/typedlabeledontologyterm",
+    "https://provshapes.org/schemas/derivation"
+  ],
+  "shapes" : [
+    {
+      "@id" : "this:MINDSShape",
+      "@type" : "sh:NodeShape",
+      "nodeKind" : "sh:IRI",
+      "label" : "",
+      "targetClass" : "dcat:Dataset",
+      "editorialNote" : "Keep only minds properties here and create another mindsext for optional properties.",
+      "seeAlso" : [
+        "https://www.w3.org/TR/vocab-dcat",
+        "https://schema.org"
+      ],
+      "property" : [
+        {
+          "path" : "rdf:type",
+          "name" : "Type",
+          "description" : "The dataset type.",
+          "minCount" : 1,
+          "node" : "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/DataTypeOntologyTermShape"
+        },
+        {
+          "path" : "dcat:license",
+          "name" : "License",
+          "description" : "Recommended License CCBY0. see NMC.A Link towards the dataset license. Write recommendation for license. Check metadata",
+          "class" : "nsg:License",
+          "node" : "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/LicenseOntologyTermShape",
+          "editorialNote" : "The license property should be required."
+        },
+        {
+          "path" : "nsg:subject",
+          "name" : "Subject",
+          "description" : "The subject of the study. This data represent an observation of this subject.",
+          "class" : "nsg:Subject",
+          "minCount" : 1,
+          "seeAlso" : "https://neuroshapes.org/commons/subject/shapes/SubjectShape",
+          "editorialNote" : "Asserted subject entity. It may differ from the subject from the provenance."
+        },
+        {
+          "path" : "nsg:brainLocation",
+          "name" : "Brain Location",
+          "description" : "The Brain location object.",
+          "class" : "nsg:BrainLocation",
+          "seeAlso" : "https://neuroshapes.org/commons/brainlocation/shapes/BrainLocationShape",
+          "minCount" : 1
+        },
+        {
+          "path" : "nsg:contribution",
+          "name" : "Contribution",
+          "description" : "Information about the contribution of an agent during the generation of this dataset.",
+          "class" : "nsg:Contribution",
+          "seeAlso" : "https://neuroshapes.org/commons/contribution/v0.1.0/ContributionShape",
+          "minCount" : 1
+        },
+        {
+          "path" : "dcat:distribution",
+          "name" : "Distribution",
+          "description" : "Details about the dataset download such as access and format information.",
+          "class" : "dcat:Distribution",
+          "seeAlso" : "https://neuroshapes.org/commons/distribution/shapes/DistributionShape",
+          "editorialNote":"To be mandatory (minCount set to 1), the distribution metadata and the data should be created at the same time."
+        },
+        {
+          "path" : "nsg:derivation",
+          "name" : "Qualified Derivation",
+          "description" : "Derivation.",
+          "class" : "prov:Derivation",
+          "seeAlso" : "https://provshapes.org/schemas/derivation/shapes/DerivationShape"
+        },
+        {
+          "path" : "nsg:generation",
+          "name" : "Qualified Generation",
+          "description" : "Generation.",
+          "class" : "prov:Generation",
+          "seeAlso" : "https://provshapes.org/schemas/generation/shapes/GenerationShape"
+        }
+      ]
+    }
+  ]
+}

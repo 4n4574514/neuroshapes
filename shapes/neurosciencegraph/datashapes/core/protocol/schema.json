@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://incf.github.io/neuroshapes/contexts/schema.json",
+    {
+      "this": "https://neuroshapes.org/dash/protocol/shapes/"
+    }
+  ],
+  "@type": "nxv:Schema",
+  "imports": [
+    "https://neuroshapes.org/commons/protocol"
+  ],
+  "shapes": [
+    {
+      "@id": "this:ProtocolShape",
+      "label": "A shape for describing a nsg:Protocol instance",
+      "comments": "This shape is for a generic protocol.",
+      "targetClass": "nsg:Protocol",
+      "nodeKind": "sh:BlankNodeOrIRI",
+      "node": "https://neuroshapes.org/commons/protocol/shapes/ProtocolShape"
+    }
+  ],
+  "@id": "https://neuroshapes.org/dash/protocol"
+}
